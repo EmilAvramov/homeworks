@@ -1,8 +1,8 @@
 import useWeatherData from '../../hooks/useWeatherData';
 import { useForm } from 'react-hook-form';
 
-const Weather = () => {
-	const { data, error, sendCity } = useWeatherData();
+const Weather:React.FC = ():JSX.Element => {
+	const { data, sendCity } = useWeatherData();
 
 	const { register, handleSubmit } = useForm();
 
@@ -22,7 +22,7 @@ const Weather = () => {
 				</select>
 				<input type='submit' />
 			</form>
-            {data && <p>{data}</p>}
+            {data && <p>{data.temperature}</p>}
 		</main>
 	);
 };
